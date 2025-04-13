@@ -26,6 +26,15 @@ func main() {
 		default:
 				fmt.Printf("The result of the integer division of %v with remainder is %v", result, remainder)
 	}
+
+	switch remainder {
+		case 0:
+			fmt.Println("The division is exact")
+		case 1, 2:
+			fmt.Println("The division was close")
+		default:
+			fmt.Println("The division was not close")
+	}
 }
 
 func printMe(printVal string) {
