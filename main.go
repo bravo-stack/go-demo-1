@@ -11,4 +11,7 @@ func main() {
 
 	fmt.Println(len(str))
 	fmt.Println(utf8.RuneCountInString(str))
+	
+	var myRune rune = 'g'
+	fmt.Println(myRune)
 }
