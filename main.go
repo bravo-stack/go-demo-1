@@ -15,15 +15,16 @@ import (
 func main() {
 	printMe("Hello, World!")
 	var numerator uint8 = 130
-	var denominator uint8 = 0
+	var denominator uint8 = 2
 	var result, remainder, err = intDivision(numerator, denominator)
 
-	if err != nil {
-		fmt.Println(err.Error())
-	} else if remainder == 0 {
-		fmt.Printf("The result of the integer division is %v", result)
-	} else {
-		fmt.Printf("The result of the integer division of %v with remainder is %v", result, remainder)
+	switch {
+		case err != nil:
+				fmt.Println(err.Error())
+		case remainder == 0:
+				fmt.Printf("The result of the integer division is %v", result)
+		default:
+				fmt.Printf("The result of the integer division of %v with remainder is %v", result, remainder)
 	}
 }
 
