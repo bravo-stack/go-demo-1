@@ -8,24 +8,37 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 )
 
 func main() {
 	printMe("Hello, World!")
-	var numerator uint8 = 131
-	var denominator uint8 = 3
-	var result, remainder uint8 = intDivision(numerator, denominator)
-	fmt.Println("Result of intDivision is: ", result)
-	fmt.Println("Remainder of intDivision is: ", remainder)
+	var numerator uint8 = 130
+	var denominator uint8 = 0
+	var result, remainder, err = intDivision(numerator, denominator)
+
+	if err != nil {
+		fmt.Println(err.Error())
+	} else if remainder == 0 {
+		fmt.Printf("The result of the integer division is %v", result)
+	} else {
+		fmt.Printf("The result of the integer division of %v with remainder is %v", result, remainder)
+	}
 }
 
 func printMe(printVal string) {
 	fmt.Println(printVal)
 }
 
-func intDivision (var1 uint8, var2 uint8) (uint8, uint8) {
-	var result uint8 = var1 / var2
-	var remainder uint8 = var1 % var2
-	return result, remainder
+func intDivision (numerator uint8, denominator uint8) (uint8, uint8, error) {
+	var err error
+	if denominator == 0 {
+		err = errors.New("denominator cannot be zero")
+		return 0,0,err
+	}
+
+	var result uint8 = numerator / denominator
+	var remainder uint8 = numerator % denominator
+	return result, remainder, err
 }
