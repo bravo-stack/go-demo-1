@@ -11,12 +11,9 @@ import (
 )
 
 func main() {
-	myVar := "Hello, World!"
+	const age = 17
+	const pi float32 = 3.1412
 
-	fmt.Println(myVar)
-
-	// var var1, var2, var3 int = 1, 2, 3
-	// var var1, var2, var3 = 1, 2, 3
-	var1, var2, var3 := 56, 78, 90
-	fmt.Println(var1, var2, var3)
+	fmt.Println(age)
+	fmt.Println(pi)
 }
