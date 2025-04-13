@@ -11,9 +11,18 @@ import (
 )
 
 func main() {
-	const age = 17
-	const pi float32 = 3.1412
+	printMe("Hello, World!")
+	var numerator int = 118234231
+	var denominator int = 3
+	var result int = int(intDivision(uint8(numerator), uint8(denominator)))
+	fmt.Println("Result of intDivision is: ", result)
+}
 
-	fmt.Println(age)
-	fmt.Println(pi)
+func printMe(printVal string) {
+	fmt.Println(printVal)
+}
+
+func intDivision (var1 uint8, var2 uint8) uint8 {
+	var result uint8 = var1 / var2
+	return result
 }
