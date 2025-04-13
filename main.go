@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
+	"unicode/utf8"
 )
 
 func main() {
 
-	var intNum1 uint8 = 3
-	var intNum2 uint8 = 2
+	var str string = "Hello, ¥§World!"
 
-	fmt.Println(intNum1/intNum2)
-	fmt.Println(intNum1%intNum2)
+	fmt.Println(len(str))
+	fmt.Println(utf8.RuneCountInString(str))
 }
